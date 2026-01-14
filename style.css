@@ -5,6 +5,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     min-height: 100vh;
+    margin: 0;
+}
+
+.pagina-interna {
+    background-color: #FFFFFF !important;/*no funxionA el important e*/
+    color: #000000;
 }
 
 /*titulo.header */
@@ -38,7 +44,7 @@ body {
     flex-direction: column;
     gap: 0px;
     max-width: 1200px;
-    height: calc(100vh - 180px); /*altura total menos el header*/
+    height: calc(100vh - 180px); /*altura total menos el header. osea mates*/
     margin: 0 auto;
     min-height: 500px;
 }
@@ -76,14 +82,14 @@ body {
 }
 
 .archivador-tab:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(255, 255, 255, 0.2);
 }
 
 /*  +  */
 .add-tab {
     position: fixed;
-    bottom: 30px; /* aumenta de 20px a 30px */
+    bottom: 30px; 
     right: 30px;
     background-color: transparent;
     color: white;
@@ -94,7 +100,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     margin: 0;
-    z-index: 1000; /* asegura que esté encima */
+    z-index: 1000; /* encima */
 }
 
 .add-tab:hover {
@@ -103,7 +109,151 @@ body {
     transform: scale(1.1);
 }
 
-/* ==================== RESPONSIVE ==================== */
+/*header de las pags internas*/
+.page-header {
+    background-color: #000000;
+    border-bottom: 3px solid white;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header-pagina h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.descr {
+    font-size: 0.85rem;
+    color: white;
+}
+
+.header-plus {
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header-plus:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+/*cajas grid - papers.html*/
+
+.cajas-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:20px;
+    padding: 30px;
+     min-height:calc(100vh-120px);
+    background-color: #FFFFFF;
+
+}
+
+.caja {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 2px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+.caja:hover {
+    background-color: #f0f0f0;
+}
+
+.caja p {
+    font-weight: 600;
+    margin: 5px 0;
+    font-size: 0.9rem;
+
+}
+
+/*caja alta (3 filas) */
+.caja-alta {
+    grid-row: span 3;
+}
+
+/*caja ancha (2 columnas) */
+.caja-ancha {
+    grid-column: span 2;
+}
+
+/*3 COLUMNAS - LIBRARY.HTML*/
+.three-columns {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    gap: 0;
+    height: calc(100vh - 100px);
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+}
+
+.sidebar-col {
+    background-color: #0066FF;
+    color: white;
+    padding: 30px 20px;
+    border-right: 3px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-label {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.year {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-top: auto;
+}
+
+.content-col {
+    background-color: white;
+    padding: 30px;
+    border-right: 3px solid white;
+    overflow-y: auto;
+}
+
+.content-col:last-child {
+    border-right: none;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.book-item {
+    padding: 15px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+    color: black;
+}
+
+/*  para movil media demas responsive*/
 @media (max-width: 768px) {
     .main-header {
         flex-direction: column;
@@ -136,5 +286,13 @@ body {
     
     .archivador-tab p {
         font-size: 0.85rem;
+    }
+
+    .cajas-container {
+        grid-template-columns: 1fr;
+    }
+
+    .three-columns {
+        grid-template-columns: 1fr;
     }
 }
